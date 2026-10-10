@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hangman | Word Workshop</title>
+	<link rel="stylesheet" href="/main/styles.css">
+</head>
+<body>
+	<div class="scene" aria-hidden="true">
+		<div class="scene-grid"></div>
+		<div class="orb orb-one"></div>
+		<div class="orb orb-two"></div>
+		<div class="orbit orbit-one"><i></i></div>
+		<div class="orbit orbit-two"><i></i></div>
+		<div class="cube cube-one"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+		<div class="cube cube-two"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+	</div>
+	<main class="app-shell">
+		<section class="game-panel" aria-labelledby="game-title">
+			<div class="topbar">
+				<p class="eyebrow"><span class="signal"></span> WORD WORKSHOP <span class="divider"></span> ROUND <strong id="round-number">01</strong></p>
+				<div class="score-pill"><span>POINTS</span><strong id="score">0000</strong></div>
+				<button class="new-game-button" id="new-game" type="button">New game <span aria-hidden="true">↗</span></button>
+			</div>
+
+			<div class="intro">
+				<div>
+					<p class="kicker">A little logic, one letter at a time.</p>
+					<h1 id="game-title">Find the hidden<br><em>word.</em></h1>
+				</div>
+				<div class="intro-side">
+					<p class="intro-copy">Guess the word before the mistakes run out. Every letter counts.</p>
+					<p class="project-tag">INTERNSHIP PROJECT <span>01</span></p>
+				</div>
+			</div>
+
+			<div class="game-board">
+				<div class="hangman-card" aria-label="Hangman drawing">
+					<div class="card-label">THE GALLOWS</div>
+					<div class="hangman-drawing" id="hangman-drawing" aria-hidden="true">
+						<div class="gallows-roof"></div>
+						<div class="gallows-post"></div>
+						<div class="gallows-base"></div>
+						<div class="gallows-rope"></div>
+						<div class="person head"></div>
+						<div class="person body"></div>
+						<div class="person arm-left"></div>
+						<div class="person arm-right"></div>
+						<div class="person leg-left"></div>
+						<div class="person leg-right"></div>
+					</div>
+					<p class="mistakes"><span id="mistakes-count">0</span> / 6 mistakes</p>
+				</div>
+
+				<div class="guess-card">
+					<div class="card-label">MYSTERY WORD <span id="word-length">0 letters</span></div>
+					<div class="word-slots" id="word-slots" aria-live="polite"></div>
+					<p class="message" id="message">Choose a letter to begin.</p>
+
+					<div class="keyboard" id="keyboard" aria-label="Letter choices"></div>
+
+					<div class="status-row">
+						<div><span class="status-dot"></span><span id="status-text">Game in progress</span></div>
+						<span class="hint">Keyboard ready · 6 chances</span>
+					</div>
+					<button class="reset-button" id="reset-game" type="button">Reset round <span aria-hidden="true">↻</span></button>
+				</div>
+			</div>
+			<footer><span>PYTHON BACKEND</span><span>·</span><span>NO CHEATING, JUST PATIENCE</span></footer>
+		</section>
+	</main>
+	<script src="/main/game.js"></script>
+</body>
+</html>
